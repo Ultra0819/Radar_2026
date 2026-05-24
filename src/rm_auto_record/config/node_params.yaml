@@ -1,0 +1,29 @@
+/**:
+  ros__parameters:
+    uri: "/home/hwx/rosbag/"
+    buffer_duration: 10.0   # 缓冲时长（秒），触发录制时会把缓冲区数据一并写入
+    stop_delay: 10.0
+    test_mode: false        # 测试模式=true，实战=false
+    topic_name:
+    # 雷达模块
+      - "/livox/lidar"
+      # 相机模块
+      - "/camera_image/compressed"
+      # 融合模块[cite: 2]
+      - "/auto_info"
+      - "/match_info"
+      # 坐标变换，rosbag 回放时 RViz 可视化点云需要
+      - "/tf"
+      - "/tf_static"
+
+    topic_type:
+    # 雷达模块对应的类型[cite: 2]
+      - "sensor_msgs/msg/PointCloud2"
+      # 相机模块对应的类型[cite: 2]
+      - "sensor_msgs/msg/CompressedImage"
+      # 融合模块对应的类型[cite: 2]
+      - "vision_interface/msg/Auto"
+      - "vision_interface/msg/MatchInfo"
+      # 坐标变换对应的类型
+      - "tf2_msgs/msg/TFMessage"
+      - "tf2_msgs/msg/TFMessage"

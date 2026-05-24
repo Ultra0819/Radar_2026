@@ -1,0 +1,21 @@
+vision_camera_node:
+  ros__parameters:
+    camera_info_url: package://hik_camera/config/camera_info.yaml
+
+    acquisition_frame_rate: 59.0   # 相机采集帧率 单位：Hz
+    exposure_time: 7000.0       # 曝光时间 单位：微秒
+    gain: 19.0
+
+    camera_name: "narrow_stereo"  
+    target_frame: "camera_optical_frame"  
+    recording: false    #是否录制
+
+    pixel_format: "BayerRG8"        # Recommended Option: "RGB8Packed", "BayerRG8"
+    adc_bit_depth: "ADCBitDepth_8"         # If using "BayerRG8", ADCBitDepth_8 or ADCBitDepth_12
+    use_gpu_converter: true         # Use CUDA Bayer8 -> RGB8 conversion when available
+
+    use_DeviceSerialNumber: false    #是否使用序列号查找相机
+    DeviceSerialNumber: "DA1564615" # 相机序列号 DA1564615  DA1041822 
+
+    
+   
